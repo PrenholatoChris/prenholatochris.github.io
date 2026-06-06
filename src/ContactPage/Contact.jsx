@@ -3,8 +3,11 @@ import instagramIcon from '../assets/instagram.png';
 import linkedinIcon from '../assets/linkedin.png';
 import githubIcon from '../assets/github.png';
 import emailIcon from '../assets/email.svg';
+import profileData from '../data/profile.json';
 
 function Contact() {
+    const { githubUrl, linkedinUrl, instagramUrl, username, email } = profileData.contact;
+
     return (
         <div id='Contact' className="Contact bg-image">
             <div className="content">
@@ -12,26 +15,27 @@ function Contact() {
                 <div className='container'>
                     <div className="social">
                         <div className="icons">
-                            <a href="https://github.com/PrenholatoChris">
+                            <a href={githubUrl}>
                                 <img src={githubIcon} alt="GitHub" />
                             </a>
-                            <a href="https://www.linkedin.com/in/prenholatochris/">
+                            <a href={linkedinUrl}>
                                 <img src={linkedinIcon} alt="LinkedIn" />
                             </a>
-                            <a href="https://www.instagram.com/prenholatochris/">
+                            {/* Temporary desactived */}
+                            {/* <a href={instagramUrl}>
                                 <img src={instagramIcon} alt="Instagram" />
-                            </a>
+                            </a> */}
                         </div>
                         <div className="text-group">
-                            <h2>@PrenholatoChris</h2>
+                            <h2>{username}</h2>
                         </div>
                     </div>
                     <div className="email">
-                            <a className='icons' href="mailto:christianprenholato10@gmail.com">
-                                <img src={emailIcon} alt="Email" />
-                            </a>
+                        <a className='icons' href={`mailto:${email}`}>
+                            <img src={emailIcon} alt="Email" />
+                        </a>
                         <div className="text-group">
-                            <h2>christianprenholato10@gmail.com</h2>
+                            <h2>{email}</h2>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,78 @@
+{
+  "birthDate": "2001-10-17",
+  "homeTitles": [
+    "LEARNING",
+    "SOFTWARE ENGINEER",
+    "COMPUTER SCIENTIST",
+    "AI & ML ENTHUSIAST",
+    "BACKEND DEVELOPER"
+  ],
+  "about": {
+    "resumeDescription": "Bachelor of Science in Computer Science from the Federal University of Espírito Santo, with a strong foundation in software development, design patterns, and artificial intelligence. Proactive and highly motivated to learn new tools and methodologies, with experience thriving in collaborative and challenging environments. Skilled at applying analytical thinking and creativity to develop efficient and scalable solutions.",
+    "technologiesDescription": "Strong technical background in Java, Spring Boot, PL/SQL, and Python, with a growing interest in Artificial Intelligence and Cybersecurity.",
+    "education": [
+      {
+        "degree": "Degree in Computer Science",
+        "period": "2020-2024",
+        "institution": "Universidade Federal do Espírito Santo (UFES)"
+      },
+      {
+        "degree": "Technical Course in Electrotechnics - Incomplete",
+        "period": "2019-2020",
+        "institution": "Instituto Federal do Espírito Santo"
+      },
+      {
+        "degree": "High School Completion",
+        "period": "2019",
+        "institution": "Escola São Geraldo, Espirito Santo"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Application Developer",
+        "type": "Professional",
+        "description": "Backend developer working on implementation and maintenance of the ERP System Conexos. Responsible for the development of new functionalities, troubleshooting and system performance improvements. Using Java, Spring Boot and Oracle"
+      },
+      {
+        "role": "Intern - Software Developer",
+        "type": "Professional",
+        "description": "I developed and maintained reports in the Related ERP System. Contributed to data visualization improvements, bug fixes, and in improving reporting performance by improving queries. Using Oracle PL/SQL and JasperReports."
+      }
+    ],
+    "languages": [
+      {
+        "name": "Portuguese",
+        "level": "Native"
+      },
+      {
+        "name": "English",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Spanish",
+        "level": "Basic"
+      }
+    ]
+  },
+  "skillCategories": [
+    {
+      "title": "Programming Languages",
+      "skills": ["Java", "Python", "PL/SQL", "JavaScript", "SQL"]
+    },
+    {
+      "title": "Frameworks & Tools",
+      "skills": ["Spring Boot", "Git", "JasperSoft Report", "RESTful APIs", "Node.js"]
+    },
+    {
+      "title": "Fields of Interest",
+      "skills": ["Artificial Intelligence", "Machine Learning", "Cybersecurity", "Software Architecture"]
+    }
+  ],
+  "contact": {
+    "githubUrl": "https://github.com/PrenholatoChris",
+    "linkedinUrl": "https://www.linkedin.com/in/prenholatochris/",
+    "instagramUrl": "https://www.instagram.com/prenholatochris/",
+    "username": "@PrenholatoChris",
+    "email": "christianprenholato10@gmail.com"
+  }
+}

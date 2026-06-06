@@ -1,22 +1,26 @@
 .Information {
     display: flex;
     justify-content: center;
-    align-items: end; /* Centraliza também verticalmente */
-    width: 100%;
-    min-height: 150px; /* Define uma altura mínima para o contêiner */
+    align-items: end;
+    /* Centraliza também verticalmente */
+    min-height: 150px;
+    /* Define uma altura mínima para o contêiner */
     padding: 1rem;
 }
 
 .Information .container {
     width: 75%;
-    max-width: 1000px; /* Limita o tamanho máximo para telas maiores */
+    max-width: 1000px;
+    /* Limita o tamanho máximo para telas maiores */
     text-align: center;
 }
 
 .Information span {
-    font-size: calc(var(--font-size-big) - 0.5rem); /* Reduz o tamanho do texto */
+    font-size: calc(var(--font-size-big) - 0.5rem);
+    /* Reduz o tamanho do texto */
     text-align: center;
-    line-height: 1.5; /* Garante espaçamento confortável entre linhas */
+    line-height: 1.5;
+    /* Garante espaçamento confortável entre linhas */
     display: block;
 
     animation-name: fade-in-out;
@@ -26,17 +30,29 @@
 
 /* Suaviza a transição de opacidade */
 @keyframes fade-in-out {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .Information .box {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 1rem; /* Espaçamento entre o texto e os pontos */
+    margin-top: 1rem;
+    /* Espaçamento entre o texto e os pontos */
 }
 
 .Information .dot,
@@ -44,7 +60,8 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    transition: background-color 0.3s ease; /* Suaviza a troca de cor */
+    transition: background-color 0.3s ease;
+    /* Suaviza a troca de cor */
 }
 
 .Information .dot {
@@ -62,16 +79,19 @@
     }
 
     .Information span {
-        font-size: calc(var(--font-size-big) - 2rem); /* Reduz o tamanho do texto */
+        font-size: calc(var(--font-size-big) - 2rem);
+        /* Reduz o tamanho do texto */
     }
 
     .Information .box {
-        gap: 8px; /* Ajusta o espaçamento entre os pontos */
+        gap: 8px;
+        /* Ajusta o espaçamento entre os pontos */
     }
 
     .Information .dot,
     .Information .dot-on {
         width: 8px;
-        height: 8px; /* Ajusta o tamanho dos pontos */
+        height: 8px;
+        /* Ajusta o tamanho dos pontos */
     }
 }

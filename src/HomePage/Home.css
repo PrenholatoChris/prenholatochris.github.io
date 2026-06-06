@@ -1,14 +1,17 @@
 .home {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Garante que os elementos ocupem os extremos */
-  align-items: center;
-  height: 100vh; /* Ocupa a tela inteira */
+  justify-content: space-between;
+  /* Garante que os elementos ocupem os extremos */
+  align-items: left;
+  height: 100vh;
+  /* Ocupa a tela inteira */
   background: var(--bg-color1) url('../assets/DaviBG.png') no-repeat center center;
   background-size: cover;
   text-align: center;
   padding: 2rem;
-  box-sizing: border-box; /* Garante que o padding seja incluído no cálculo de altura */
+  box-sizing: border-box;
+  /* Garante que o padding seja incluído no cálculo de altura */
 }
 
 /* Título */
@@ -18,17 +21,43 @@
   font-size: 8rem;
   font-weight: 200;
   color: #bfb9b6;
-  margin-top: 5rem; 
+  margin-top: 5rem;
+  padding-left: 5%;
 }
 
 /* Information */
-.home .Information{
-  margin-top: auto; /* Garante que o último elemento (Information) fique no final */
+.home .Information {
+  margin-top: auto;
+  /* Garante que o último elemento (Information) fique no final */
   padding-bottom: 5rem;
 }
 
 @media (max-width: 768px) {
   .home h1 {
     font-size: 5rem;
+  }
+}
+
+.typed-text {
+  color: var(--bg-color2);
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(40, 164, 158, 0.3);
+}
+
+.typed-cursor {
+  color: var(--bg-color2);
+  animation: blink 0.7s infinite;
+  font-weight: 200;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
   }
 }
