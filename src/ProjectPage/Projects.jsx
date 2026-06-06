@@ -34,13 +34,6 @@ function Projects() {
         <h1>PROJECTS</h1>
 
         <div className="container">
-          <SpotlightCardProject
-            badgeText="FEATURED THESIS PROJECT (TCC)"
-            title="copycat-merge-tcc"
-            description="Research, development, and optimization of machine learning model merging techniques. Features automated Python scripts designed to synthesize and evaluate neural weights, exploring advanced methodologies in Deep Learning."
-            tags={["Artificial Intelligence", "Machine Learning", "Python", "Neural Networks"]}
-            link="https://github.com/PrenholatoChris/copycat-merge-tcc"
-          />
           {projects.map(project => (
             <SpotlightCardProject
               key={project.id}
