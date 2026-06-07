@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   /* Garante que os elementos ocupem os extremos */
-  align-items: left;
+  align-items: flex-start;
   height: 100vh;
   /* Ocupa a tela inteira */
   background: var(--bg-color1) url('../assets/DaviBG.png') no-repeat center center;
@@ -18,7 +18,7 @@
 .home h1 {
   text-align: left;
   font-family: 'Roboto', sans-serif;
-  font-size: 8rem;
+  font-size: clamp(2rem, 15vw, 10rem);
   font-weight: 200;
   color: #bfb9b6;
   margin-top: 5rem;
@@ -30,12 +30,6 @@
   margin-top: auto;
   /* Garante que o último elemento (Information) fique no final */
   padding-bottom: 5rem;
-}
-
-@media (max-width: 768px) {
-  .home h1 {
-    font-size: 5rem;
-  }
 }
 
 .typed-text {
@@ -59,5 +53,28 @@
 
   50% {
     opacity: 0;
+  }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .home {
+    padding: 1.5rem;
+  }
+  .home h1 {
+    font-size: clamp(2rem, 10vw, 5rem);
+    margin-top: 4rem;
+    padding-left: 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 1rem;
+  }
+  .home h1 {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    margin-top: 3rem;
+    padding-left: 0;
   }
 }
