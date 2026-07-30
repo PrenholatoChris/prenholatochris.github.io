@@ -7,8 +7,6 @@ import imgController from "../assets/controller.svg";
 import imgAirplane from "../assets/airplane.svg";
 import myImg from "../assets/me.jpg";
 
-import curriculo_pt from "../assets/CHRISTIAN_CV_PT.pdf";
-import curriculo_en from "../assets/CHRISTIAN_CV_EN.pdf";
 
 function About() {
     const [githubUser, setGithubUser] = useState(null);
@@ -43,13 +41,13 @@ function About() {
                             {profileData.about.technologiesDescription}
                         </p>
                         <div className="profile-actions">
-                            <a href={curriculo_pt} download="Christian_Prenholato_CV.pdf" className="download-btn">
+                            <a href={profileData.about.cvLinks.pt} target="_blank" rel="noopener noreferrer" className="download-btn">
                                 <svg className="download-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                                     <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
                                 </svg>
                                 Portuguese Resume
                             </a>
-                            <a href={curriculo_en} download="Christian_Prenholato_CV.pdf" className="download-btn">
+                            <a href={profileData.about.cvLinks.en} target="_blank" rel="noopener noreferrer" className="download-btn">
                                 <svg className="download-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                                     <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
                                 </svg>

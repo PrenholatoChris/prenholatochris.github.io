@@ -8,6 +8,10 @@
     "BACKEND DEVELOPER"
   ],
   "about": {
+    "cvLinks": {
+      "pt": "https://drive.google.com/file/d/1RUeaz8GOyuO3DBMp7t0jz0AGElT9aGmv/view?usp=sharing",
+      "en": "https://drive.google.com/file/d/1xHTPZRqYDJmVV6kpT8-y736ANEJ2KcWT/view?usp=sharing"
+    },
     "resumeDescription": "Bachelor of Science in Computer Science from the Federal University of Espírito Santo, with a strong foundation in software development, design patterns, and artificial intelligence. Proactive and highly motivated to learn new tools and methodologies, with experience thriving in collaborative and challenging environments. Skilled at applying analytical thinking and creativity to develop efficient and scalable solutions.",
     "technologiesDescription": "Strong technical background in Java, Spring Boot, PL/SQL, and Python, with a growing interest in Artificial Intelligence and Cybersecurity.",
     "education": [
