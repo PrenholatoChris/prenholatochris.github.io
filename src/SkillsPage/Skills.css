@@ -30,11 +30,14 @@
 .Skills .skills-card {
   flex: 1;
   min-width: 300px;
+  /* Without this the 300px min-width is content-only: padding and border pushed
+     the card 30px past the viewport on a 360px screen. */
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(40, 164, 158, 0.15);
   border-radius: 15px;
   padding: 2.5rem 2rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -49,7 +52,7 @@
   font-size: 22px;
   margin-bottom: 1.5rem;
   color: var(--font-color-title);
-  font-weight: 500;
+  font-weight: 400;
   border-left: 4px solid var(--bg-color2);
   padding-left: 0.8rem;
 }
@@ -67,8 +70,8 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 400;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   cursor: default;
 }
 
@@ -87,5 +90,12 @@
   
   .Skills .skills-grid {
     flex-direction: column;
+  }
+
+  /* Let the card shrink below 300px on narrow phones instead of being clipped. */
+  .Skills .skills-card {
+    min-width: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
   }
 }

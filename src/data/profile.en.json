@@ -1,4 +1,74 @@
 {
+  "ui": {
+    "meta": {
+      "title": "Christian Prenholato — Software Engineer",
+      "description": "Computer Scientist and backend developer. Java, Spring Boot, PL/SQL and Python, with a growing focus on Artificial Intelligence and Cybersecurity."
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact",
+      "language": "Language"
+    },
+    "home": {
+      "prefix": "STILL"
+    },
+    "about": {
+      "heading": "ABOUT ME",
+      "resume": "Resume",
+      "education": "Education",
+      "experience": "Experience",
+      "languages": "Languages",
+      "interests": "Interests",
+      "cvPrimary": "Download Resume",
+      "cvOther": "Prefer it in Portuguese?",
+      "photoAlt": "A photo of Christian Prenholato",
+      "gym": "Gym",
+      "gaming": "Gaming",
+      "travel": "Travel"
+    },
+    "stats": {
+      "repos": "public repos",
+      "followers": "followers",
+      "since": "on GitHub since"
+    },
+    "skills": {
+      "heading": "SKILLS"
+    },
+    "projects": {
+      "heading": "PROJECTS",
+      "viewSource": "View Source Code"
+    },
+    "contact": {
+      "heading": "CONTACT"
+    },
+    "terminal": {
+      "title": "guest@prenholato.me",
+      "hint": "Type 'help' to get started.",
+      "prompt": "$",
+      "inputLabel": "Terminal command",
+      "notFound": "command not found:",
+      "tryHelp": "Type 'help' to see what I can do.",
+      "help": [
+        "Available commands:",
+        "  whoami     who I am, in short",
+        "  cv         open my resume",
+        "  skills     what I work with",
+        "  projects   jump to my projects",
+        "  contact    how to reach me",
+        "  lang       switch language (lang pt | lang en)",
+        "  clear      clear the screen",
+        "  exit       close this terminal"
+      ],
+      "cv": "Opening my resume in a new tab...",
+      "projectsMsg": "Scrolling to the projects section...",
+      "contactMsg": "Reach me at:",
+      "langUsage": "Usage: lang pt | lang en",
+      "langSwitched": "Language set to English."
+    }
+  },
   "birthDate": "2001-10-17",
   "homeTitles": [
     "LEARNING",
@@ -61,15 +131,32 @@
   "skillCategories": [
     {
       "title": "Programming Languages",
-      "skills": ["Java", "Python", "PL/SQL", "JavaScript", "SQL"]
+      "skills": [
+        "Java",
+        "Python",
+        "PL/SQL",
+        "JavaScript",
+        "SQL"
+      ]
     },
     {
       "title": "Frameworks & Tools",
-      "skills": ["Spring Boot", "Git", "JasperSoft Report", "RESTful APIs", "Node.js"]
+      "skills": [
+        "Spring Boot",
+        "Git",
+        "JasperSoft Report",
+        "RESTful APIs",
+        "Node.js"
+      ]
     },
     {
       "title": "Fields of Interest",
-      "skills": ["Artificial Intelligence", "Machine Learning", "Cybersecurity", "Software Architecture"]
+      "skills": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Cybersecurity",
+        "Software Architecture"
+      ]
     }
   ],
   "contact": {

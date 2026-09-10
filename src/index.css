@@ -12,6 +12,12 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Without this the page canvas is the browser default (white), which showed
+   through as a flash. Also covers overscroll bounce and any gap between sections. */
+body {
+  background-color: var(--bg-color1);
+}
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +26,16 @@ html {
 h1,h2,h3,h4{
   font-family: 'Roboto', sans-serif;
   color: var(--font-color-title);
+  /* Headings default to 700 in every browser, which fights the thin display face.
+     Set them explicitly so the page keeps its light, minimal register. */
+  font-weight: 300;
 }
+
+h2{ font-weight: 300; }
+h3{ font-weight: 400; }
+h4{ font-weight: 400; }
+
+strong{ font-weight: 500; }
 
 h1{
   font-family: 'Roboto', sans-serif;
@@ -43,4 +58,19 @@ p,span,li,ul,a,strong {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+/* The typewriter and blinking cursor have no guard of their own. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--bg-color2);
+  outline-offset: 3px;
 }

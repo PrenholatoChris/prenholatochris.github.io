@@ -1,10 +1,10 @@
 import './Projects.css';
-import ImageBG from '../assets/ProjectsBG.png';
-import ProjectComponent from '../Components/ProjectComponent';
 import SpotlightCardProject from '../Components/SpotlightCardProject';
 import { useEffect, useState } from 'react';
+import { useLang } from '../lang';
 
 function Projects() {
+  const { t } = useLang();
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -12,6 +12,8 @@ function Projects() {
       try {
         const response = await fetch('https://api.github.com/users/prenholatochris/repos');
         const data = await response.json();
+        // GitHub returns an object (not an array) on rate-limit errors.
+        if (!Array.isArray(data)) return;
         const filteredProjects = data.filter(githubProject =>
           githubProject.description && githubProject.description.includes('<PORTFOLIO>')
         ).map(githubProject => ({
@@ -31,7 +33,7 @@ function Projects() {
   return (
     <div id="Projects" className="Projects bg-image">
       <div className="container">
-        <h1>PROJECTS</h1>
+        <h1>{t.ui.projects.heading}</h1>
 
         <div className="container">
           {projects.map(project => (
@@ -40,6 +42,7 @@ function Projects() {
               title={project.name}
               description={project.description}
               link={project.html_url}
+              linkText={t.ui.projects.viewSource}
             />
           ))}
         </div>

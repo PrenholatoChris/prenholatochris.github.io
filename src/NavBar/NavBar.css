@@ -55,3 +55,80 @@
         font-size: 12px; /* Reduz ainda mais em telas muito pequenas */
     }
 }
+
+/* Active section underline — reuses the hover :after bar. */
+.NavBar div ul li a.active:after {
+    transform: scaleX(1);
+    background-color: var(--bg-color2);
+}
+
+.NavBar div ul li a.active {
+    color: var(--font-color-title);
+}
+
+/* Language switch */
+.NavBar div ul {
+    align-items: center;
+}
+
+.lang-switch {
+    display: flex;
+    align-items: stretch;
+    margin-left: 10px;
+    border: 1px solid rgba(40, 164, 158, 0.45);
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 0; /* strip the inline-block gap so both halves are exactly equal */
+}
+
+.lang-switch button {
+    /* PT and EN have different glyph widths, so a fixed box keeps the two halves
+       symmetrical instead of sizing each one to its own text. */
+    width: 34px;
+    padding: 0;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    color: var(--font-color1);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-switch button + button {
+    border-left: 1px solid rgba(40, 164, 158, 0.45);
+}
+
+.lang-switch button:hover {
+    background-color: rgba(40, 164, 158, 0.18);
+}
+
+.lang-switch button.active {
+    background-color: var(--bg-color2);
+    color: var(--bg-color1);
+}
+
+.NavBar :is(a, button):focus-visible {
+    outline: 2px solid var(--bg-color2);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .lang-switch { margin-left: 8px; }
+    .lang-switch button { width: 30px; height: 20px; font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+    .NavBar div { margin-right: 3%; }
+    .NavBar div ul { gap: 12px; }
+    .lang-switch { margin-left: 6px; }
+    .lang-switch button { width: 26px; height: 18px; font-size: 10px; }
+}

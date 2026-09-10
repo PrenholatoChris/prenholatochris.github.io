@@ -87,7 +87,7 @@
 
 .About .experience h3, .About .education h3 {
     margin-top: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--bg-color2);
 }
 
@@ -106,7 +106,9 @@
 .About .profile-actions {
     margin-top: 2rem;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .About .download-btn {
@@ -115,10 +117,10 @@
     gap: 0.5rem;
     background-color: var(--bg-color2);
     color: var(--bg-color1);
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.8rem 1.8rem;
     border-radius: 25px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     font-size: 16px;
     box-shadow: 0 4px 15px rgba(40, 164, 158, 0.3);
     cursor: pointer;
@@ -153,4 +155,73 @@
     .About .baixo {
         flex-direction: column;
     }
+
+    /* One block per row on a phone, each centred. min-width must stay at 100%:
+       dropping it lets the two sit side by side in ~130px columns and collide. */
+    .About .languages,
+    .About .interests {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .About .interests ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .About .interests img {
+        width: 64px;
+    }
+}
+
+/* Secondary link to the resume in the other language */
+.About .cv-alt-link {
+    font-size: 15px;
+    color: var(--bg-color2);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease;
+}
+
+.About .cv-alt-link:hover {
+    border-bottom-color: var(--bg-color2);
+}
+
+/* Live GitHub stats — values come from the profile fetch About already makes */
+.About .github-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.About .github-stats .stat {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.About .github-stats .stat strong {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--bg-color2);
+}
+
+.About .github-stats .stat span {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+    .About .profile-actions,
+    .About .github-stats {
+        justify-content: center;
+    }
+    .About .github-stats { gap: 1.75rem; }
+    .About .github-stats .stat { align-items: center; text-align: center; }
+    .About .github-stats .stat strong { font-size: 1.6rem; }
 }

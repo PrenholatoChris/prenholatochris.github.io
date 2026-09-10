@@ -1,6 +1,6 @@
 import './SpotlightCardProject.css';
 
-function SpotlightCardProject({ badgeText, title, description, tags, link, linkText = "View Source Code" }) {
+function SpotlightCardProject({ badgeText, title, description, tags, link, linkText }) {
   return (
     <div className="spotlight-card">
       {badgeText && <div className="spotlight-badge">{badgeText}</div>}

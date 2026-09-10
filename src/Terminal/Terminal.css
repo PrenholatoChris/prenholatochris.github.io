@@ -1,0 +1,125 @@
+.terminal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(7, 30, 34, 0.75);
+    backdrop-filter: blur(4px);
+    animation: terminal-fade 0.18s ease-out;
+}
+
+.terminal {
+    width: min(720px, 100%);
+    height: min(440px, 80vh);
+    display: flex;
+    flex-direction: column;
+    background-color: #06181b;
+    border: 1px solid rgba(40, 164, 158, 0.35);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    animation: terminal-rise 0.22s ease-out;
+}
+
+/* Window chrome, matching the project cards' mac-window motif */
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background-color: #0b262b;
+    border-bottom: 1px solid rgba(40, 164, 158, 0.25);
+    flex-shrink: 0;
+}
+
+.terminal-header-buttons {
+    display: flex;
+    gap: 7px;
+}
+
+.terminal-header-buttons > * {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    display: block;
+}
+
+.terminal-header-buttons .red { background-color: #ff5f56; cursor: pointer; }
+.terminal-header-buttons .yellow { background-color: #ffbd2e; }
+.terminal-header-buttons .green { background-color: #27c93f; }
+
+.terminal-title {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 13px;
+    color: var(--font-color1);
+    opacity: 0.7;
+}
+
+.terminal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    cursor: text;
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+.terminal-body p {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--font-color1);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-body p.echo { color: var(--font-color-title); }
+
+.terminal .prompt {
+    font-family: inherit;
+    color: var(--bg-color2);
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.terminal-input-row input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--font-color-title);
+    caret-color: var(--bg-color2);
+}
+
+.terminal-body::-webkit-scrollbar { width: 8px; }
+.terminal-body::-webkit-scrollbar-thumb {
+    background-color: rgba(40, 164, 158, 0.35);
+    border-radius: 4px;
+}
+
+@keyframes terminal-fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes terminal-rise {
+    from { opacity: 0; transform: translateY(12px) scale(0.98) }
+    to   { opacity: 1; transform: none }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .terminal-backdrop, .terminal { animation: none; }
+}
+
+@media (max-width: 480px) {
+    .terminal { height: 70vh; }
+    .terminal-body p, .terminal-input-row input { font-size: 13px; }
+}

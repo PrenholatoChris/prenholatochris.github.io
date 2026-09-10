@@ -2,8 +2,7 @@
 .spotlight-card {
     width: 100%;
     max-width: 640px;
-    background: rgba(7, 30, 34, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(7, 30, 34, 0.92);
     border: 2px solid var(--bg-color2);
     border-radius: 15px;
     padding: 2.5rem;
@@ -14,7 +13,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
 }
 
 .spotlight-card:hover {
@@ -26,10 +26,21 @@
     background: var(--bg-color2);
     color: var(--bg-color1);
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 500;
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     letter-spacing: 1px;
+}
+
+/* Repo names and descriptions come from the GitHub API, so they can be a single
+   unbroken token (a long URL, a hyphen-free repo name). The card is a flex column
+   with align-items: flex-start, so without this such a string stretches the child
+   past the card edge instead of wrapping. */
+.spotlight-card h2,
+.spotlight-desc {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .spotlight-card h2 {
@@ -67,11 +78,11 @@
     gap: 0.5rem;
     color: var(--bg-color1);
     background: var(--bg-color2);
-    font-weight: 600;
+    font-weight: 400;
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
     font-size: 15px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 4px 10px rgba(40, 164, 158, 0.2);
     text-decoration: none;
 }
