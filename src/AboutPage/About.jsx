@@ -1,14 +1,20 @@
 import './About.css';
 import React, { useEffect, useState } from 'react';
-import profileData from '../data/profile.json';
+import { useLang } from '../lang';
 
 import imgGym from "../assets/dumbbell.svg";
 import imgController from "../assets/controller.svg";
 import imgAirplane from "../assets/airplane.svg";
-import myImg from "../assets/me.jpg";
+import myImg from "../assets/me.webp";
 
+const DownloadIcon = () => (
+    <svg className="download-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
+    </svg>
+);
 
 function About() {
+    const { lang, t } = useLang();
     const [githubUser, setGithubUser] = useState(null);
 
     useEffect(() => {
@@ -16,7 +22,8 @@ function About() {
             try {
                 const res = await fetch('https://api.github.com/users/prenholatochris');
                 const data = await res.json();
-                setGithubUser(data);
+                // Rate-limited responses are 403 with a `message` field and no profile data.
+                if (res.ok) setGithubUser(data);
             } catch (err) {
                 console.error('Error fetching GitHub user info:', err);
             }
@@ -25,44 +32,56 @@ function About() {
     }, []);
 
     const avatarUrl = githubUser?.avatar_url || myImg;
-    const displayName = githubUser?.name || "Christian Prenholato";
+    const otherLang = lang === 'pt' ? 'en' : 'pt';
+
+    // Every tile reads from the same response About already fetches for the avatar.
+    const stats = githubUser && [
+        { value: githubUser.public_repos, label: t.ui.stats.repos },
+        { value: githubUser.followers, label: t.ui.stats.followers },
+        { value: new Date(githubUser.created_at).getFullYear(), label: t.ui.stats.since },
+    ];
 
     return (
         <div id='About' className="About">
             <div className="container">
-                <h1>ABOUT ME</h1>
+                <h1>{t.ui.about.heading}</h1>
                 <div className='topo'>
-                    <img src={avatarUrl} alt={`A photo of ${displayName}`} className="profile-img" />
+                    <img src={avatarUrl} alt={t.ui.about.photoAlt} className="profile-img" />
                     <div className="profile-info">
-                        <h2>Resume</h2>
+                        <h2>{t.ui.about.resume}</h2>
                         <p>
-                            {profileData.about.resumeDescription}<br />
+                            {t.about.resumeDescription}<br />
                             <br />
-                            {profileData.about.technologiesDescription}
+                            {t.about.technologiesDescription}
                         </p>
+
+                        {stats && (
+                            <div className="github-stats">
+                                {stats.map(({ value, label }) => (
+                                    <div key={label} className="stat">
+                                        <strong>{value}</strong>
+                                        <span>{label}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
                         <div className="profile-actions">
-                            <a href={profileData.about.cvLinks.pt} target="_blank" rel="noopener noreferrer" className="download-btn">
-                                <svg className="download-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
-                                </svg>
-                                Portuguese Resume
+                            <a href={t.about.cvLinks[lang]} target="_blank" rel="noopener noreferrer" className="download-btn">
+                                <DownloadIcon />
+                                {t.ui.about.cvPrimary}
                             </a>
-                            <a href={profileData.about.cvLinks.en} target="_blank" rel="noopener noreferrer" className="download-btn">
-                                <svg className="download-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z" />
-                                </svg>
-                                English Resume
+                            <a href={t.about.cvLinks[otherLang]} target="_blank" rel="noopener noreferrer" className="cv-alt-link">
+                                {t.ui.about.cvOther}
                             </a>
                         </div>
-                        {/* <div className="profile-actions">
-                        </div> */}
                     </div>
                 </div>
                 <div className='baixo'>
                     <div className="timelines-container">
                         <div className="education">
-                            <h2>Education</h2>
-                            {profileData.about.education.map((edu, idx) => (
+                            <h2>{t.ui.about.education}</h2>
+                            {t.about.education.map((edu, idx) => (
                                 <div key={idx}>
                                     <h3>{edu.degree}</h3>
                                     <p>{edu.period}<br />{edu.institution}</p>
@@ -70,8 +89,8 @@ function About() {
                             ))}
                         </div>
                         <div className="experience">
-                            <h2>Experience</h2>
-                            {profileData.about.experience.map((exp, idx) => (
+                            <h2>{t.ui.about.experience}</h2>
+                            {t.about.experience.map((exp, idx) => (
                                 <div key={idx}>
                                     <h3>{exp.role}</h3>
                                     <p><strong>{exp.type}</strong><br />
@@ -83,20 +102,20 @@ function About() {
                     </div>
                     <div className="info-cards-container">
                         <div className="languages">
-                            <h2>Languages</h2>
-                            {profileData.about.languages.map((lang, idx) => (
+                            <h2>{t.ui.about.languages}</h2>
+                            {t.about.languages.map((langItem, idx) => (
                                 <React.Fragment key={idx}>
-                                    <h3>{lang.name}</h3>
-                                    <p>{lang.level}</p>
+                                    <h3>{langItem.name}</h3>
+                                    <p>{langItem.level}</p>
                                 </React.Fragment>
                             ))}
                         </div>
                         <div className="interests">
-                            <h2>Interests</h2>
+                            <h2>{t.ui.about.interests}</h2>
                             <ul>
-                                <li><img src={imgGym} alt="Gym" /></li>
-                                <li><img src={imgController} alt="Gaming" /></li>
-                                <li><img src={imgAirplane} alt="Travel" /></li>
+                                <li><img src={imgGym} alt={t.ui.about.gym} /></li>
+                                <li><img src={imgController} alt={t.ui.about.gaming} /></li>
+                                <li><img src={imgAirplane} alt={t.ui.about.travel} /></li>
                             </ul>
                         </div>
                     </div>

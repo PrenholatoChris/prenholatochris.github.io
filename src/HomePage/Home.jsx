@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import Information from '../InformationPage/Information';
-import profileData from '../data/profile.json';
+import { useLang } from '../lang';
 
 function Home() {
-  const titles = profileData.homeTitles;
+  const { lang, t } = useLang();
+  const titles = t.homeTitles;
   const [currentText, setCurrentText] = useState("");
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  // The typewriter indexes into `titles` by position; switching language swaps the array
+  // underneath it, so restart from a clean state instead of slicing a different word.
+  useEffect(() => {
+    setTitleIndex(0);
+    setCharIndex(0);
+    setIsDeleting(false);
+    setCurrentText("");
+  }, [lang]);
 
   useEffect(() => {
     let timer;
@@ -38,16 +47,15 @@ function Home() {
     }
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, titleIndex]);
+  }, [charIndex, isDeleting, titleIndex, titles]);
 
   return (
     <div id='Home' className="home">
       <h1>
-        STILL<br />
+        {t.ui.home.prefix}<br />
         <span className="typed-text">{currentText}</span>
         <span className="typed-cursor">|</span>
       </h1>
-      {/* <Information /> */}
     </div>
   );
 }

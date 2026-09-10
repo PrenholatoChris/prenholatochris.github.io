@@ -13,7 +13,7 @@ html, body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url('../assets/ProjectsBG.png');
+    background-image: url('../assets/ProjectsBG.webp');
     background-size: cover;
     background-position: center;
     box-sizing: border-box;

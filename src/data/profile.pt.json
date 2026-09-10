@@ -1,0 +1,169 @@
+{
+  "ui": {
+    "meta": {
+      "title": "Christian Prenholato — Engenheiro de Software",
+      "description": "Cientista da Computação e desenvolvedor backend. Java, Spring Boot, PL/SQL e Python, com foco crescente em Inteligência Artificial e Cibersegurança."
+    },
+    "nav": {
+      "home": "Início",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "contact": "Contato",
+      "language": "Idioma"
+    },
+    "home": {
+      "prefix": "AINDA"
+    },
+    "about": {
+      "heading": "SOBRE MIM",
+      "resume": "Currículo",
+      "education": "Formação",
+      "experience": "Experiência",
+      "languages": "Idiomas",
+      "interests": "Interesses",
+      "cvPrimary": "Baixar Currículo",
+      "cvOther": "Prefere em inglês?",
+      "photoAlt": "Uma foto de Christian Prenholato",
+      "gym": "Academia",
+      "gaming": "Games",
+      "travel": "Viagens"
+    },
+    "stats": {
+      "repos": "repositórios públicos",
+      "followers": "seguidores",
+      "since": "no GitHub desde"
+    },
+    "skills": {
+      "heading": "HABILIDADES"
+    },
+    "projects": {
+      "heading": "PROJETOS",
+      "viewSource": "Ver Código-Fonte"
+    },
+    "contact": {
+      "heading": "CONTATO"
+    },
+    "terminal": {
+      "title": "visitante@prenholato.me",
+      "hint": "Digite 'help' para começar.",
+      "prompt": "$",
+      "inputLabel": "Comando do terminal",
+      "notFound": "comando não encontrado:",
+      "tryHelp": "Digite 'help' para ver o que eu sei fazer.",
+      "help": [
+        "Comandos disponíveis:",
+        "  whoami     quem eu sou, resumidamente",
+        "  cv         abrir meu currículo",
+        "  skills     com o que eu trabalho",
+        "  projects   ir para os meus projetos",
+        "  contact    como falar comigo",
+        "  lang       trocar de idioma (lang pt | lang en)",
+        "  clear      limpar a tela",
+        "  exit       fechar este terminal"
+      ],
+      "cv": "Abrindo meu currículo em uma nova aba...",
+      "projectsMsg": "Indo para a seção de projetos...",
+      "contactMsg": "Fale comigo em:",
+      "langUsage": "Uso: lang pt | lang en",
+      "langSwitched": "Idioma alterado para Português."
+    }
+  },
+  "birthDate": "2001-10-17",
+  "homeTitles": [
+    "APRENDENDO",
+    "ENGENHEIRO DE SOFTWARE",
+    "CIENTISTA DA COMPUTAÇÃO",
+    "ENTUSIASTA DE IA & ML",
+    "DESENVOLVEDOR BACKEND"
+  ],
+  "about": {
+    "cvLinks": {
+      "pt": "https://drive.google.com/file/d/1RUeaz8GOyuO3DBMp7t0jz0AGElT9aGmv/view?usp=sharing",
+      "en": "https://drive.google.com/file/d/1xHTPZRqYDJmVV6kpT8-y736ANEJ2KcWT/view?usp=sharing"
+    },
+    "resumeDescription": "Bacharel em Ciência da Computação pela Universidade Federal do Espírito Santo, com base sólida em desenvolvimento de software, padrões de projeto e inteligência artificial. Proativo e altamente motivado a aprender novas ferramentas e metodologias, com experiência em ambientes colaborativos e desafiadores. Aplico pensamento analítico e criatividade para desenvolver soluções eficientes e escaláveis.",
+    "technologiesDescription": "Sólida base técnica em Java, Spring Boot, PL/SQL e Python, com interesse crescente em Inteligência Artificial e Cibersegurança.",
+    "education": [
+      {
+        "degree": "Bacharelado em Ciência da Computação",
+        "period": "2020-2024",
+        "institution": "Universidade Federal do Espírito Santo (UFES)"
+      },
+      {
+        "degree": "Curso Técnico em Eletrotécnica - Incompleto",
+        "period": "2019-2020",
+        "institution": "Instituto Federal do Espírito Santo"
+      },
+      {
+        "degree": "Ensino Médio Completo",
+        "period": "2019",
+        "institution": "Escola São Geraldo, Espírito Santo"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Desenvolvedor de Aplicações",
+        "type": "Profissional",
+        "description": "Desenvolvedor backend atuando na implementação e manutenção do Sistema ERP Conexos. Responsável pelo desenvolvimento de novas funcionalidades, resolução de problemas e melhorias de desempenho do sistema. Utilizando Java, Spring Boot e Oracle."
+      },
+      {
+        "role": "Estagiário - Desenvolvedor de Software",
+        "type": "Profissional",
+        "description": "Desenvolvi e mantive relatórios no Sistema ERP Related. Contribuí com melhorias na visualização de dados, correção de bugs e ganho de desempenho dos relatórios através da otimização de consultas. Utilizando Oracle PL/SQL e JasperReports."
+      }
+    ],
+    "languages": [
+      {
+        "name": "Português",
+        "level": "Nativo"
+      },
+      {
+        "name": "Inglês",
+        "level": "Intermediário"
+      },
+      {
+        "name": "Espanhol",
+        "level": "Básico"
+      }
+    ]
+  },
+  "skillCategories": [
+    {
+      "title": "Linguagens de Programação",
+      "skills": [
+        "Java",
+        "Python",
+        "PL/SQL",
+        "JavaScript",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Frameworks & Ferramentas",
+      "skills": [
+        "Spring Boot",
+        "Git",
+        "JasperSoft Report",
+        "RESTful APIs",
+        "Node.js"
+      ]
+    },
+    {
+      "title": "Áreas de Interesse",
+      "skills": [
+        "Inteligência Artificial",
+        "Machine Learning",
+        "Cibersegurança",
+        "Arquitetura de Software"
+      ]
+    }
+  ],
+  "contact": {
+    "githubUrl": "https://github.com/PrenholatoChris",
+    "linkedinUrl": "https://www.linkedin.com/in/prenholatochris/",
+    "instagramUrl": "https://www.instagram.com/prenholatochris/",
+    "username": "@PrenholatoChris",
+    "email": "christianprenholato10@gmail.com"
+  }
+}

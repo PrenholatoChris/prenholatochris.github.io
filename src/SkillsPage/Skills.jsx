@@ -1,16 +1,16 @@
 import React from 'react';
 import './Skills.css';
-import profileData from '../data/profile.json';
+import { useLang } from '../lang';
 
 function Skills() {
-  const skillCategories = profileData.skillCategories;
+  const { t } = useLang();
 
   return (
     <div id="Skills" className="Skills">
       <div className="container">
-        <h1>SKILLS</h1>
+        <h1>{t.ui.skills.heading}</h1>
         <div className="skills-grid">
-          {skillCategories.map((category, index) => (
+          {t.skillCategories.map((category, index) => (
             <div key={index} className="skills-card">
               <h2>{category.title}</h2>
               <div className="skills-list">

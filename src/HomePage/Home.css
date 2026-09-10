@@ -6,7 +6,7 @@
   align-items: flex-start;
   height: 100vh;
   /* Ocupa a tela inteira */
-  background: var(--bg-color1) url('../assets/DaviBG.png') no-repeat center center;
+  background: var(--bg-color1) url('../assets/DaviBG.webp') no-repeat center center;
   background-size: cover;
   text-align: center;
   padding: 2rem;
@@ -34,7 +34,7 @@
 
 .typed-text {
   color: var(--bg-color2);
-  font-weight: 500;
+  font-weight: 300;
   text-shadow: 0 0 10px rgba(40, 164, 158, 0.3);
 }
 
